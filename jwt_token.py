@@ -12,4 +12,5 @@ payload_data ={
 }
 access_token = jwt.encode(payload=payload_data,key=key_data)
 
+print("access token:")
 print(access_token)
