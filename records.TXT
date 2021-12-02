@@ -1,0 +1,7 @@
+
+('gautam suvarna', 'test@gmail.com', '9819546976', '', '6666666666')
+('aaa', 'aaa', 'aaa', '', 'aaa')
+('aaa', 'aaa', 'aaa', '', 'aaa')
+('smiksha venus palande', 'sam@gmail.com', '90044411111', 'O+', '11111111111')
+('GAUTAM SUVARNA', 'TEST@GMAIL.COM', '98195555', '', '88888888888')
+('GAUTAM SUVARNA', 'TEST@GMAIL.COM', '98195555', 'A-', '88888888888')
