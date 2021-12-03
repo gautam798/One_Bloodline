@@ -12,5 +12,5 @@ def signin():
 signin()
 print(result)
 print("signin process is  working fine.(only for debugging purpose)")
-#for fetching data in sql query
+
 print(result[1])

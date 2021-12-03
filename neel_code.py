@@ -1,3 +1,6 @@
+
+import mysql_connector
+
 x = input("\nAre you a Blood Donor or a Blood Reciever?\nType 'd' for Blood Donor or 'r' for Blood Reciever\nOption- ")
 if x == 'd':
   y = input("You have opted for Blood Donor.\nPlease enter your blood group according to the options: \na. A+\nb. A-\nc. B+\nd. B-\ne. AB+\nf. AB-\ng. O+\nh. O-\nOption- ")
@@ -40,3 +43,5 @@ if x == 'r':
     print("You can recieve blood from: O- Only")
   else:
       print("Invalid Input")
+
+mysql_connector.test()
