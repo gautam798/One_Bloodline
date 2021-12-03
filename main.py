@@ -1,8 +1,9 @@
 #main program
 #imported necesaary modules
+from __future__ import print_function
 import mysql.connector
 import jwt_token
-# from __future__ import print_function
+import re
 from mysql.connector import (connection)
 
 #mysql config
@@ -61,32 +62,33 @@ print("signup process is  working fine.(only for debugging purpose)")
 mydb.commit()
 
 
-#signin page
-
+#signin page(fully working and tested)
 def signin():
-    global result
-    username = input("Enter Username: ")
-    password = input("Enter New Password: ")
-    result = [username,password]
+    global result,passcheck
+    username = str(input("Enter Username:"))
+    password = str(input("Enter New Password:"))
+    #data of user is stored here
+    result = [username, password]
     ID = 1
-    passcheck= ("SELECT password FROM auth where username=%s")
-    password1 =mycursor.execute(passcheck, (username))
+    passcheck= ("SELECT password FROM auth "
+                "WHERE username='"+username+"'")
+    mycursor.execute(passcheck,username)
+    passwd= str(mycursor.fetchone())
+    password1= re.sub('[^A-Za-z0-9]+', '', passwd)
+    # print(passwd)
+    # print(password1)
+    # print(passcheck)
     if password1 == password:
         print("success")
-        jwt_token.token(username,ID)
+        token1=jwt_token.token(username,ID)
+        # print(token1)
 
     else:
         print("Wrong password")
-
-
-
-
-
-
-
 #execution of functions
 signin()
-print(result)
+mydb.commit()
+# print(result)
 print("signin process is  working fine.(only for debugging purpose)")
 
-print(result[1])
+

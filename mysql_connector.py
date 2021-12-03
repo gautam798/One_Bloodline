@@ -36,6 +36,7 @@ def signup():
     mycursor.execute("select * from blood")
     # fetch funtion has been used there are many more option. refer documentation.
     result = mycursor.fetchall()
+
     # loop for printing out data . result can be changed to any varaible
     for i in result:
         print(i)
