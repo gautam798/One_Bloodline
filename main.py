@@ -35,26 +35,33 @@ def signup():
     number = input("Enter Mobile Number: ")
     password = input("Enter New Password: ")
     password1 = input("Retype New Password: ")
-
-    bloodgroup = input()
-    pincode = input()
-    address = input()
-    city = input()
-    state = input()
-    adhaar = input()
+    bloodgroup = input("bloodgroup: ")
+    pincode = input("pincode: ")
+    address = (input("address: "))
+    city = input("city: ")
+    state = input("state: ")
+    adhaar = input("adhaar: ")
+    health_score = 9
+    rating= 5
 
     if password == password1:
-        signup_data = [username, address, adhaar, number, email, bloodgroup, city, state, pincode]
+        a = [username, address, adhaar, number, email, bloodgroup, city, state, pincode,health_score,rating]
         add_user = ("INSERT INTO blood "
-                    "(name,address, adhaar_no,contact_no,email_id,bloodgroup,city,state,pincode) "
-                    "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);")
-        data_user = (
-        add_user[0], add_user[1], add_user[2], add_user[3], add_user[4], add_user[5], add_user[6], add_user[7],
-        add_user[8])
-        mycursor.execute(add_user, data_user)
+                    "(name,address,aadhar_no,contact_no,email_id,health_score,bloodgroup,city,state,pincode,rating) "
+                    "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);")
+        data_user = (a[0], a[1], a[2], a[3], a[4],a[9], a[5], a[6], a[7],a[8], a[10])
+        mycursor.execute(add_user, (data_user))
+
+        print(data_user)
+        print("sucessfully added data")
     else:
         print("Try Again! password didn't match")
         signup()
+
+
+# signup()
+# mydb.commit()
+# print(result)
 
 # execution of functions
 signup()
